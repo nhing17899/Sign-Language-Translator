@@ -12,31 +12,65 @@ const processInput = (text) => {
     if (word == "") continue;
     words.push(word);
   }
-
   return words.join(" ");
 };
 
-const getLetterPhotos = (text) => {
-    text = text.toArray();
-    
-}
+const getLetterPhotos = async (text) => {
+  text = text.split(" ");
+  var result = [];
+  for (var i = 0; i < text.length; i++) {
+    var word = text[i];
+    var resultElement = [];
+    for (var j = 0; j < word.length; j++) {
+      const signPhoto = await Item.findOne({ text: word[j] }).signPhoto;
+      resultElement.push(signPhoto);
+    }
+    result.push(word);
+  }
+  return result;
+};
 
 exports.getSignPhotos = async (req, res) => {
-  const text = processInput(req.params.text);
+  const text = processInput(req.body.text);
   const item = await Item.findOne({ text: text }).lean();
   if (!item) {
-
-  } else if (item.category === "daily conversation") {
-    res.status(200).json({
-      status: "success",
-      dataType: "array",
-      data: item.sentencePhotos,
-    });
+    const data = await getLetterPhotos(text);
+    try {
+      res.status(200).json({
+        status: "success",
+        dataType: "letter",
+        data: data
+      });
+    } catch (err) {
+      res.status(500).json({
+        status: "fail",
+        message: err,
+      });
+    }
   } else {
-    res.status(200).json({
-      status: "success",
-      dataType: "string",
-      data: item.signPhoto,
-    });
+    var dataType = "";
+    var data = "";
+    switch (item.category) {
+      case "daily conversation":
+        dataType = "conversation";
+        data = item.sentencePhotos;
+        break;
+      default:
+        dataType = "word";
+        data = item.signPhoto;
+        break;
+    }
+    try {
+      res.status(200).json({
+        status: "success",
+        dataType: dataType,
+        data: data,
+      });
+    } catch (err) {
+      res.status(500).json({
+        status: "fail",
+        message: err,
+      });
+    }
   }
 };

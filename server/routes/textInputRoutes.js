@@ -1,10 +1,8 @@
 const express = require("express");
-const textInputController = require('../controllers/textInputController');
+const textInputController = require("../controllers/textInputController");
 
 const router = express.Router();
 
-router
-  .route("/:text")
-  .get(textInputController.getSignPhotos);
+router.route("/").post(textInputController.getSignPhotos);
 
-  module.exports = router;
+module.exports = router;
