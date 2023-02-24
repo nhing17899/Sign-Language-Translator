@@ -19,6 +19,7 @@ const ItemSchema = new Schema({
   },
   signPhoto: String,
   meaningPhoto: String,
+  sentencePhotos: [String]
 });
 
 ItemSchema.index({ difficulty: 1 });
