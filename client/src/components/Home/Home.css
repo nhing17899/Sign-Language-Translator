@@ -5,6 +5,21 @@
   width: 1296.02px;
 }
 
+.mission-statement {
+  padding: 0 50px 200px 50px;
+  height: 40vw;
+  background-image: url("/client/public/assets/images/bg-home.jpg");
+
+}
+
+.bg {
+  overflow: hidden;
+  width: 100%;
+  z-index: 1000;
+  margin-top: -2rem;
+  position: relative;
+}
+
 .blue-text {
   display: block;
   font-size: 50px;
@@ -22,12 +37,7 @@
   gap: 20px;
 }
 
-.mission-statement {
-  border: 1px solid;
-  padding: 0 50px 200px 50px;
-  background-color: rgb(127, 206, 255);
-  height: 40vw;
-}
+
 
 .stats {
   display: flex;

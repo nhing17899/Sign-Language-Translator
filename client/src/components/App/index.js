@@ -1,12 +1,12 @@
 import "./App.css";
-import NavigationBar from "../Navigation";
+import NavigationBar from "../layout/Navigation";
 import HomePage from "../Home";
-import Footer from "../Footer";
+import Footer from "../layout/Footer";
 import Learning from "../Learning";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LearnByTopic from "../LearnByTopic";
-import AboutUs from "../AboutUs";
+import AboutUs from "../layout/AboutUs";
 import Dictionary from "../Dictionary";
 
 function App() {

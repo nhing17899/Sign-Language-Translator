@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from '../Slider';
+import Slider from '../layout/Slider';
 import './LearnByTopic.css';
 
 const LearnByTopic = () => {

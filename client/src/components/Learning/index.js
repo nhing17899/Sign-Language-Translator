@@ -1,8 +1,8 @@
 import React from 'react';
-import List from '../List';
-import Slider from '../Slider';
+import List from '../ui/List';
+import Slider from '../layout/Slider';
 import './Learning.css';
-import Flashcard from '../Flashcard';
+import Flashcard from '../ui/Flashcard';
 
 const Learning = () => {
   const imageUrl = [

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Home.css';
 import { BsArrowRight } from 'react-icons/bs';
-import Slider from '../Slider';
-import Image from '../Image';
+import Slider from '../ui/Slider';
+import Image from '../ui/Image';
 
 export default function HomePage(props) {
     const imageUrl = [
