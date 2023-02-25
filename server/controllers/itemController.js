@@ -11,7 +11,7 @@ exports.checkID = async (req, res, next, val) => {
   });
 };
 
-////
+/////////////
 exports.getAllItems = async (req, res) => {
   const items = await Item.find({});
 

@@ -38,7 +38,7 @@ exports.getSignPhotos = async (req, res) => {
     try {
       res.status(200).json({
         status: "success",
-        dataType: "letter",
+        dataType: "alphabet",
         data: data
       });
     } catch (err) {
