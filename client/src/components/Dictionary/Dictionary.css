@@ -1,0 +1,38 @@
+.picture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 30px;
+}
+
+.dictionary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dictionary > span {
+  font-size: 45px;
+  color: blue;
+}
+
+.search-area {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+.hot-search {
+  margin-top: 20px;
+  text-decoration: underline;
+}
