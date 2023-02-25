@@ -1,0 +1,19 @@
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid;
+  margin: 10px;
+  padding: 30px 70px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-sections > h2 {
+  color: rgb(10, 97, 124);
+}

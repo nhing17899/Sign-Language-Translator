@@ -1,0 +1,9 @@
+.learning-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.flashcards {
+  background-color: rgb(127, 206, 255);
+}
