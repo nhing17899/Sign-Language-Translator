@@ -1,6 +1,6 @@
 import React from 'react';
 import List from '../ui/List';
-import Slider from '../layout/Slider';
+import Slider from '../ui/Slider/Slider';
 import './Learning.css';
 import Flashcard from '../ui/Flashcard';
 
@@ -19,7 +19,7 @@ const Learning = () => {
       <div className='learning-section'>
         <List title="Learn By Topic" items={['Text 1', 'Text 2', 'Text 3', 'Text 4']} />
         <div className='topic-right'>
-          <h3>{'>'} See More</h3>
+          <h3 id='see-more'>{'>'} See More</h3>
           <div className='learning-section'>
             <Slider
               title="Slides"

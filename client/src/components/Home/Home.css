@@ -2,19 +2,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1296.02px;
+  width: 100%;
+  /* background-color: rgb(206, 231, 255); */
+
 }
 
 .mission-statement {
+  border-top: 1rem;
   padding: 0 50px 200px 50px;
   height: 40vw;
-  background-image: url("/client/public/assets/images/bg-home.jpg");
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://todaysparent.mblycdn.com/tp/resized/2019/09/1600x900/signs-you-need-to-teach-your-baby-1280x960.jpg');
+  background-size: cover;
 }
 
 .bg {
-  overflow: hidden;
   width: 100%;
+  height: 100%;
+
   z-index: 1000;
   margin-top: -2rem;
   position: relative;
@@ -22,13 +29,22 @@
 
 .blue-text {
   display: block;
-  font-size: 50px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 40px; 
+  margin-top: 60px;
 }
 
 .topics {
-  margin-top: 100px;
+  padding: 6rem;
+  padding-top: 2rem;
+  background-color: rgb(206, 231, 255);
+}
+
+.common-sign {
+  padding: 6rem;
+  padding-top: 2rem;
+  background-color: rgb(206, 231, 255);
 }
 
 .pictures {
@@ -37,24 +53,9 @@
   gap: 20px;
 }
 
-
-
-.stats {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(127, 206, 255);
-  margin: 100px 0;
-  padding: 20px;
-}
-
-.stats > div {
-  font-size: 30px;
-}
-
 .lets-start {
   padding-left: 30px;
-  margin-top: 90px;
+  /* margin-top: 90px; */
 }
 
 .sections {

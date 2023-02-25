@@ -7,3 +7,8 @@
 .flashcards {
   background-color: rgb(127, 206, 255);
 }
+
+#see-more {
+  font-weight: 700;
+  text-decoration: underline;
+}
