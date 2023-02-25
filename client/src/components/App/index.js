@@ -1,8 +1,13 @@
 import "./App.css";
 import NavigationBar from "../Navigation";
 import HomePage from "../Home";
+import Footer from "../Footer";
+import Learning from "../Learning";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LearnByTopic from "../LearnByTopic";
+import AboutUs from "../AboutUs";
+import Dictionary from "../Dictionary";
 
 function App() {
   const router = createBrowserRouter([
@@ -12,21 +17,26 @@ function App() {
     },
     {
       path: "/learning",
-      element: <HomePage />,
+      element: <Learning />,
     },
     {
-      path: "/about",
-      element: <HomePage />,
+      path: "/learning/learn-by-topic",
+      element: <LearnByTopic />,
     },
     {
-      path: "/faq",
-      element: <HomePage />,
+      path: "/about-us",
+      element: <AboutUs />,
+    },
+    {
+      path: "/dictionary",
+      element: <Dictionary />,
     },
   ]);
   return (
     <div className="App">
       <NavigationBar />
       <RouterProvider router={router} />
+      <Footer />
     </div>
   );
 }

@@ -29,22 +29,22 @@ export default function NavigationBar() {
             </li>
             <li>
               <NavLink
-                to="/faq"
+                to="/dictionary"
                 className={({ isActive }) =>
                   isActive ? "nav-link px-2" : "nav-link px-2 link-dark"
                 }
               >
-                FAQs
+                Dictionary
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/about"
+                to="/about-us"
                 className={({ isActive }) =>
                   isActive ? "nav-link px-2" : "nav-link px-2 link-dark"
                 }
               >
-                About
+                About Us
               </NavLink>
             </li>
           </ul>
