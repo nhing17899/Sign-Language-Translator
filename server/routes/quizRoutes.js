@@ -3,6 +3,7 @@ const quizController = require("../controllers/quizController");
 
 const router = express.Router();
 
-router.route("/").post(quizController.getQuizByCategory);
+router.route("/category").post(quizController.getQuizByCategory);
+router.route("/difficulty").post(quizController.getQuizByDifficulty);
 
 module.exports = router;

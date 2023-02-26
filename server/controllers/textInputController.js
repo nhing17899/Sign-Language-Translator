@@ -38,7 +38,6 @@ exports.getSignPhotos = async (req, res) => {
     try {
       res.status(200).json({
         status: "success",
-        dataType: "alphabet",
         data: data
       });
     } catch (err) {
@@ -48,22 +47,18 @@ exports.getSignPhotos = async (req, res) => {
       });
     }
   } else {
-    var dataType = "";
     var data = "";
     switch (item.category) {
       case "daily conversation":
-        dataType = "conversation";
         data = item.sentencePhotos;
         break;
       default:
-        dataType = "word";
-        data = item.signPhoto;
+        data = [item.signPhoto];
         break;
     }
     try {
       res.status(200).json({
         status: "success",
-        dataType: dataType,
         data: data,
       });
     } catch (err) {
