@@ -6,7 +6,7 @@ const Dictionary = () => {
     <div className='dictionary'> 
       <span>What do you want to know today?</span>
       <div className="search-area">
-        <input className="search-input form-control form-control-sm ml-3 w-75" type="text" placeholder="Search..." />
+        <input className="search-input" type="text" placeholder="Search..." />
       </div>
       <span className='hot-search'>Hot Search</span>
       <div className="picture-grid">
