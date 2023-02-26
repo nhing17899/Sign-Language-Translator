@@ -33,7 +33,8 @@ const Test = () => {
   return (
     <div>
       <div>{titleTest}</div>
-      {console.log(quizzes)}
+      {quizzes.map(quiz => (
+        (quiz.quizType === 'image to text' && <ImgToText quiz={quiz} />)))}
     </div>
   );
 };
