@@ -2,12 +2,12 @@ import "./App.css";
 import NavigationBar from "../layout/Navigation";
 import HomePage from "../Home";
 import Footer from "../layout/Footer";
-import Learning from "../Learning";
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LearnByTopic from "../LearnByTopic";
+import Learning from "../layout/Learning";
+import TestPage from "../layout/TestPage";
+import LearnByTopic from "../layout/LearnByTopic";
 import AboutUs from "../layout/AboutUs";
-import Dictionary from "../Dictionary";
+import Dictionary from "../layout/Dictionary";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +30,10 @@ function App() {
     {
       path: "/dictionary",
       element: <Dictionary />,
+    },
+    {
+      path: "/test",
+      element: <TestPage />,
     },
   ]);
   return (

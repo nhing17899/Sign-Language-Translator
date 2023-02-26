@@ -24,7 +24,7 @@ const Slider = ({ title, imagesUrl, numDisplay = 1 }) => {
         <button onClick={handlePrev}><IoIosArrowDropleftCircle /></button>
         {imagesUrl.slice(currentIndex, currentIndex + numDisplay).map((imagesUrl) => (
           <img 
-            className="item"
+            className="slider-image"
             key={imagesUrl} 
             src={imagesUrl} 
             alt="image1" 

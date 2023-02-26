@@ -14,4 +14,4 @@ const List = ({title, items}) => {
   )
 }
 
-export default List;
+export default List; 

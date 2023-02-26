@@ -1,0 +1,23 @@
+.learning-section {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5rem;
+  /* margin-bottom: 2rem; */
+  padding: 2rem 3rem;
+}
+
+.flashcards {
+  background-color: rgb(127, 206, 255);
+  width: 100%;
+}
+
+#see-more {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.learning {
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+} 

@@ -21,7 +21,7 @@ const Flashcard = ({ title, cards }) => {
   };
 
   return (
-    <div className="slider flashcard">
+    <div className="flashcard">
       <h2>{title}</h2>
       <div className="card-container">
         <div className="card">
