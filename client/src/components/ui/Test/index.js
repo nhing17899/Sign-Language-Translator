@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useState, useEffect } from "react";
-
+import ImgToText from "../QuesTest/index";
 import "./Test.css";
 
 import axios from "axios";
