@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 
 const itemRouter = require("./routes/itemRoutes");
 const textInputRouter = require("./routes/textInputRoutes");
@@ -7,6 +8,7 @@ const categoryRouter = require("./routes/categoryRoutes");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/v1/items", itemRouter);
 app.use("/api/v1/translation", textInputRouter);
