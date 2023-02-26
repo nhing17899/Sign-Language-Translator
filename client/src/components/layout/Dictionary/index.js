@@ -1,10 +1,11 @@
 import React from 'react';
+import Translate from '../../ui/Translate/Translate';
 import './Dictionary.css';
 
 const Dictionary = () => {
   return (
     <div className='dictionary'> 
-      <span>What do you want to know today?</span>
+      {/* <span>What do you want to know today?</span>
       <div className="search-area">
         <input className="search-input" type="text" placeholder="Search..." />
       </div>
@@ -14,7 +15,10 @@ const Dictionary = () => {
         <div className="image">1</div>
         <div className="image">1</div>
         <div className="image">1</div>
-      </div>
+      </div> */}
+
+
+      <Translate/>
     </div>
   )
 }

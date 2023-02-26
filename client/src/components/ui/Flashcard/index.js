@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Flashcard.css';
-import { BsArrowRightSquare, BsArrowLeftSquare } from 'react-icons/bs';
+import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 
 const Flashcard = ({ title, cards }) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -41,8 +41,8 @@ const Flashcard = ({ title, cards }) => {
         </div>
 
         <div className='arrows'>
-          <button onClick={handlePrevCard}><BsArrowLeftSquare /></button>
-          <button onClick={handleNextCard}><BsArrowRightSquare /></button>
+          <button onClick={handlePrevCard}><BiLeftArrow /></button>
+          <button onClick={handleNextCard}><BiRightArrow /></button>
         </div>
       </div>
     </div>

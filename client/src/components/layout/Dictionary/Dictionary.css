@@ -6,10 +6,10 @@
 }
 
 .search-input {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/52/52450.png?w=2000&t=st=1677386641~exp=1677387241~hmac=99da901b0aebdc9e9c6e9cb7f9605f8caba7a647be407a370329b2a6c99755fb');
-  background-position: 7px 7px;
+  background-image: url('https://icon-library.com/images/black-search-icon-png/black-search-icon-png-9.jpg');
+  background-position: 99% 50% ;
   background-repeat: no-repeat;
-  background-size: 40px;
+  background-size: 50px;
 }
 
 .search-input {
@@ -20,8 +20,8 @@
 
 .dictionary {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 80%;
+  justify-content: center;
 }
 
 .dictionary > span {
