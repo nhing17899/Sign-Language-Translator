@@ -3,20 +3,11 @@ const Item = require("../models/item");
 // QUIZZES BY CATEGORY
 
 const addImageToTextQuiz = (item) => {
-  dailyConversation = false;
-  switch (item.category) {
-    case "daily conversation":
-      question = item.sentencePhotos;
-      dailyConversation = true;
-      break;
-    default:
-      question = [item.signPhoto];
-      break;
-  }
+  let question = [];
+  question = [item.signPhoto];
 
   return {
     quizType: "image to text",
-    dailyConversation: dailyConversation,
     question: question,
     answer: item.text,
   };
@@ -35,34 +26,29 @@ const addTextToImageQuiz = async (item) => {
   let choices = [];
   let trackList = [];
   let choice = "";
-  switch (item.category) {
-    case "daily conversation":
-      choice = item.sentencePhotos;
-      break;
-    default:
-      choice = [item.signPhoto];
-      break;
-  }
+  choice = [item.signPhoto];
+
   choices.push(choice);
   trackList.push(item.text);
 
   for (let i = 0; i < 3; i++) {
-    let otherChoice = await Item.aggregate([{ $sample: { size: 1 } }]);
+    let otherChoice = await Item.aggregate([
+      { $match: { category: { $ne: "daily conversation" } } },
+      { $sample: { size: 1 } },
+    ]);
     while (
       checkIfIncluded(trackList, otherChoice[0].text) ||
       otherChoice[0].category === "alphabet"
     ) {
-      otherChoice = await Item.aggregate([{ $sample: { size: 1 } }]);
+      otherChoice = await Item.aggregate([
+        { $match: { category: { $ne: "daily conversation" } } },
+        { $sample: { size: 1 } },
+      ]);
     }
     let otherChoiceImages = "";
-    switch (otherChoice[0].category) {
-      case "daily conversation":
-        otherChoiceImages = otherChoice[0].sentencePhotos;
-        break;
-      default:
-        otherChoiceImages = [otherChoice[0].signPhoto];
-        break;
-    }
+
+    otherChoiceImages = [otherChoice[0].signPhoto];
+
     choices.push(otherChoiceImages);
     trackList.push(otherChoice[0].text);
   }
@@ -109,7 +95,10 @@ exports.getQuizByCategory = async (req, res) => {
 
 exports.getQuizByDifficulty = async (req, res) => {
   const difficulty = req.body.difficulty;
-  const items = await Item.find({ difficulty: difficulty }).limit(8);
+  const items = await Item.find({
+    difficulty: difficulty,
+    category: { $ne: "daily conversation" },
+  }).limit(8);
   let quizzes = [];
 
   for (let i = 0; i < items.length; i++) {
