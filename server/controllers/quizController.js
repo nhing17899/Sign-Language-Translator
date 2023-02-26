@@ -3,9 +3,11 @@ const Item = require("../models/item");
 // QUIZZES BY CATEGORY
 
 const addImageToTextQuiz = (item) => {
+  dailyConversation = false;
   switch (item.category) {
     case "daily conversation":
       question = item.sentencePhotos;
+      dailyConversation = true;
       break;
     default:
       question = [item.signPhoto];
@@ -14,6 +16,7 @@ const addImageToTextQuiz = (item) => {
 
   return {
     quizType: "image to text",
+    dailyConversation: dailyConversation,
     question: question,
     answer: item.text,
   };
@@ -45,7 +48,6 @@ const addTextToImageQuiz = async (item) => {
 
   for (let i = 0; i < 3; i++) {
     let otherChoice = await Item.aggregate([{ $sample: { size: 1 } }]);
-
     while (
       checkIfIncluded(trackList, otherChoice[0].text) ||
       otherChoice[0].category === "alphabet"
