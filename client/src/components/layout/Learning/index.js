@@ -3,6 +3,7 @@ import List from '../../ui/List';
 import Slider from '../../ui/Slider/Slider';
 import './Learning.css';
 import Flashcard from '../../ui/Flashcard';
+import LearnByTopic from '../LearnByTopic';
 
 const Learning = (props) => {
   const imageUrl = [
@@ -14,7 +15,7 @@ const Learning = (props) => {
     "https://www.pngfind.com/pngs/m/495-4950739_pokemon-cartoon-png-pokemon-pikachu-png-transparent-png.png"
   ];
 
-  const lists = ['List 1', 'List 2', 'List 3', 'List 4', 'List 5'];
+  const lists = ['List 1', 'List 2', 'List 3', 'List 4', 'List 5', 'List 6'];
 
   // const  {topics} = props;
 
@@ -23,28 +24,28 @@ const Learning = (props) => {
 
       <div className='learning-section'>
         {/* <span className='blue-text'>Learning Topics</span> */}
-        <List title='Learning Topics' items={['Text 1', 'Text 2', 'Text 3', 'Text 4']} />
+        <LearnByTopic topics={['Text 1', 'Text 2', 'Text 3', 'Text 4', 'Text 5', 'Text 6']} />
       </div>
 
       <div className='learning-section flashcards'>
         <div className='topic-right'>
-        <Flashcard
-          title=""
-          cards={[
-            {
-              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHuPk3eO9hEBmHXWEIyupoAqoSwK8vPwVh5L1d3N18RJJK7wbi6qNI_SmYryqAbJio7jA&usqp=CAU',
-              text: 'This is the back of card 1.'
-            },
-            {
-              imageUrl: 'https://www.citypng.com/public/uploads/preview/hd-pikachu-super-mario-cartoon-character-png-11661278318xmj9ynzunx.png',
-              text: 'This is the back of card 2.'
-            },
-            {
-              imageUrl: 'https://i.pinimg.com/736x/bf/95/34/bf953419d76bf747cba69b55e6e03957.jpg',
-              text: 'This is the back of card 3.'
-            }
-          ]}
-        />
+          <Flashcard
+            title=""
+            cards={[
+              {
+                imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHuPk3eO9hEBmHXWEIyupoAqoSwK8vPwVh5L1d3N18RJJK7wbi6qNI_SmYryqAbJio7jA&usqp=CAU',
+                text: 'This is the back of card 1.'
+              },
+              {
+                imageUrl: 'https://www.citypng.com/public/uploads/preview/hd-pikachu-super-mario-cartoon-character-png-11661278318xmj9ynzunx.png',
+                text: 'This is the back of card 2.'
+              },
+              {
+                imageUrl: 'https://i.pinimg.com/736x/bf/95/34/bf953419d76bf747cba69b55e6e03957.jpg',
+                text: 'This is the back of card 3.'
+              }
+            ]}
+          />
         </div>
         <List title="Flashcards" items={['Text 1', 'Text 2', 'Text 3', 'Text 4']} />
       </div> 

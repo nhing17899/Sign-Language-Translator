@@ -4,7 +4,6 @@ import "./QuesTest.css";
 
 const ImgToText = (props) => {
     const { quizType, question, answer } = props.quiz;
-    const { category } = props.category;
 
     const [answerInput, setAnswerInput] = useState("");
     const handleInputChange = (event) => {
@@ -14,27 +13,18 @@ const ImgToText = (props) => {
     const [questionDailyConv, setQuestionDailyConv] = useState([]);
     const [isDailyConv, setDailyConvo] = useState(false);
 
-    for (let quesImg in question) {
+    for (let quesImg of question) {
         const quesArr = quesImg.split(" ");
-        console.log(quesImg);
         if (quesArr.length > 1) {
             setDailyConvo(true);
             setQuestionDailyConv(questionDailyConv => [
                 ...questionDailyConv,
                 quesArr[1]
-            ]
-        )}
+            ])
+            setDailyConvo(false);
+            
+        }
     }
-    // question.map((quesImg) => {
-    //     const quesArr = quesImg.split(" ");
-    //     if (quesArr.length > 1) {
-    //         setDailyConvo(true);
-    //         setQuestionDailyConv(questionDailyConv => [
-    //             ...questionDailyConv,
-    //             quesArr[1]
-    //         ]
-    //     )}});
-
 
     return (
         <div className="imgToText">
@@ -53,24 +43,6 @@ const ImgToText = (props) => {
                 </div>
                 <div className="quesAnswerText">
                     <input type="text" value={answerInput} onChange={handleInputChange} placeholder='Answer here' />
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export const TextToImg = (props) => {
-    const { quizType, question, answer } = props.quiz;
-    const { category } = props.category;
-
-    return (
-        <div className="textToImg">
-            <div className="ques">
-                <div className="quesSentence">
-                    Choose the correct answer for the text
-                </div>
-                <div className="quesImgList">
-
                 </div>
             </div>
         </div>

@@ -33,12 +33,13 @@ const Test = () => {
   }, [isQuizzesFetched]);
 
   return (
-    <div>
-      <div>{titleTest}</div>
-      {console.log(quizzes)}
-      {/* {quizzes.map(quiz => (quiz.quizType === 'image to text' ? <ImgToText quiz={quiz} /> : <TextToImg quiz={quiz} category={category} />) */}
-      {quizzes.map(quiz => (quiz.quizType === 'image to text' && <ImgToText quiz={quiz} category={category} />))}
-      
+    <div className="test">
+      <div className="test-title">{titleTest}</div>
+      <div className="quiz-container">
+        {console.log(quizzes)}
+        {quizzes.map(quiz => (
+          (quiz.quizType === 'image to text' && <ImgToText quiz={quiz} />)))}
+      </div>
     </div>
   );
 };

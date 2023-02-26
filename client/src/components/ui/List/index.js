@@ -5,11 +5,11 @@ const List = ({title, items}) => {
   return (
     <div className='list-container'>
       <span className="list-title">{title}</span>
-      <ul>
+      <div className={items.length > 5 ? 'double-list' : ''}>
         {items.map((item) => (
-          <li key={item}>__ {item}</li>
+          <div className='list-item' key={item}>{item}</div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
