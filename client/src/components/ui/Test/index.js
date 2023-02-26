@@ -1,36 +1,41 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useState, useEffect } from "react";
+
 import "./Test.css";
 
-import axios from 'axios';
-
+import axios from "axios";
 
 const Test = () => {
-    const titleTest = "Test : 1";
+  const titleTest = "Test : 1";
 
-    const [quizzes, setQuizzes] = useState([]);
+  const [quizzes, setQuizzes] = useState([]);
+  const [isQuizzesFetched, setIsQuizzesFetched] = useState(false);
 
-    useEffect(async () => {
-        await axios.post('/api/v1/quiz/category', {
-          category: "family"
-        })  
-        .then(function (res) {
-          // handle success
-          setQuizzes(res.data);
-          console.log(quizzes);
-        })
-        .catch(function (err) {
-          // handle error
-          console.log(err);
-        })
-    }, [quizzes]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.post("/api/v1/quiz/category", {
+          category: "family",
+        });
+        setQuizzes(response.data.data);
+        setIsQuizzesFetched(true);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-    return (
-        <div>
-            <div>{titleTest}</div>
-        </div>
-    );
+    if (!isQuizzesFetched) {
+      fetchData();
+    }
+  }, [isQuizzesFetched]);
+
+  return (
+    <div>
+      <div>{titleTest}</div>
+      {console.log(quizzes)}
+    </div>
+  );
 };
 
 export default Test;
