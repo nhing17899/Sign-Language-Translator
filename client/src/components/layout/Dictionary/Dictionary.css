@@ -6,6 +6,13 @@
 }
 
 .search-input {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/52/52450.png?w=2000&t=st=1677386641~exp=1677387241~hmac=99da901b0aebdc9e9c6e9cb7f9605f8caba7a647be407a370329b2a6c99755fb');
+  background-position: 7px 7px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+
+.search-input {
   flex: 1;
   padding: 1rem;
   border-radius: 30px;
@@ -19,7 +26,6 @@
 
 .dictionary > span {
   font-size: 45px;
-  color: blue;
 }
 
 .search-area {
@@ -29,7 +35,12 @@
 }
 
 .search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
+  color: #444;
+  margin-right: 8px;
 }
 
 .hot-search {
