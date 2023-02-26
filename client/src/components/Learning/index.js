@@ -15,7 +15,7 @@ const Learning = () => {
   ];
 
   return (
-    <div className='container'>
+    <div className='learning'>
       <div className='learning-section'>
         <List title="Learn By Topic" items={['Text 1', 'Text 2', 'Text 3', 'Text 4']} />
         <div className='topic-right'>

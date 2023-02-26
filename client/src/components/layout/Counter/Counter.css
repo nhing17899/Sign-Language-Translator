@@ -1,9 +1,10 @@
 .main {
     padding: 0 6rem;
+    margin: 8rem;
+    margin-bottom: 4rem;
 }
 
 .title {
-    margin-top: 6vw;
     font-size: 40px;
     color: black;
     font-weight: bold;
@@ -14,7 +15,6 @@
     min-height: 40vh;
     width: 100%;
     z-index: 1;
-    margin-bottom: 40px;
     display: flex;
     gap: 15vw;
     align-items: center;
