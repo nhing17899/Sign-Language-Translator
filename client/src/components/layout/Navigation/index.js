@@ -39,6 +39,16 @@ export default function NavigationBar() {
             </li>
             <li>
               <NavLink
+                to="/test"
+                className={({ isActive }) =>
+                  isActive ? "nav-link px-2" : "nav-link px-2 link-dark"
+                }
+              >
+                Test
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/about-us"
                 className={({ isActive }) =>
                   isActive ? "nav-link px-2" : "nav-link px-2 link-dark"

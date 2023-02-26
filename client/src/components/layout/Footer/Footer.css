@@ -1,0 +1,33 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 20px;
+  background-color: rgb(175, 173, 173)
+}
+
+.footer ul {
+  list-style: none;
+  display: flex;  
+  justify-content: flex-start;
+  gap: 20px;
+  padding-bottom: 0;
+}
+
+.footer li {
+  font-size: 18px;
+  margin-top: 2rem;
+}
+
+.social-media {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 20px; 
+}
+
+.social-media svg {
+  font-size: 30px;
+  opacity: 0.8;
+}

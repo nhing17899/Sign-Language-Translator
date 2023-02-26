@@ -1,0 +1,69 @@
+/* .item {
+    width: 30%;
+    overflow: hidden;
+    position: relative;
+}
+
+.item .box {
+    height: 30rem;
+    margin: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: white;
+
+    display: flex;
+} */
+
+.boxImgDiv {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.boxImg {
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.bgText {
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(255, 122, 89, 0));
+    width: 100%;
+    height: 20rem;
+    position: absolute;
+    bottom: 0;
+    border-radius: 15px;
+}
+
+/* .content {
+    margin-bottom: 3rem;
+    margin-left: 1.5rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.content .heading {
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.content .subHeading {
+    font-size: 1em;
+    color: rgb(210, 57, 57);
+    font-weight: 700;
+} */
+
+/* .item:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+} */
+
+.box:hover {
+    box-shadow: 0 2px 12px 2px rgba(46, 46, 46, 0.66);
+
+}
+
+.hide {
+    display: none;
+}
