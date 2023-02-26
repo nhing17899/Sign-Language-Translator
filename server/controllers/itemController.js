@@ -1,8 +1,8 @@
 const Item = require("../models/item");
 
 // MIDDLEWARE
-exports.checkID = async (req, res, next, val) => {
-  const item = await Item.findOne({ _id: val }, function (err) {
+exports.checkText = async (req, res, next, val) => {
+  const item = await Item.findOne({ text: val }, function (err) {
     if (err)
       return res.status(400).json({
         status: "fail",
@@ -28,7 +28,7 @@ exports.getAllItems = async (req, res) => {
 };
 
 exports.getItem = async (req, res) => {
-  const item = await Item.findById(req.params.id);
+  const item = await Item.findOne({ text: req.params.text });
 
   try {
     res.status(200).json({

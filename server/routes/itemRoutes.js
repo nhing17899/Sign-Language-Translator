@@ -7,7 +7,7 @@ router
   .route("/")
   .get(itemController.getAllItems)
   .post(itemController.createItem);
-router.route("/:id").get(itemController.checkID, itemController.getItem);
+router.route("/:text").get(itemController.checkText, itemController.getItem);
 //   .patch(tourController.updateTour)
 //   .delete(tourController.deleteTour);
 
