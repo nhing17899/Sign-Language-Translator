@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useState, useEffect } from "react";
 import "./Test.css";
@@ -10,10 +11,8 @@ const Test = () => {
 
     const [quizzes, setQuizzes] = useState([]);
 
-    useEffect(() => {
-        axios({
-          method: 'post',
-          url: '/api/v1/quiz/category',
+    useEffect(async () => {
+        await axios.post('/api/v1/quiz/category', {
           category: "family"
         })  
         .then(function (res) {
