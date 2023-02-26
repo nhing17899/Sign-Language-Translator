@@ -3,11 +3,8 @@
 }
 
 .list-title {
-  font-size: 32px;
-  display: inline-block;
   font-weight: bold;
   border-bottom: 4px solid;
-  /* color: blue; */
   margin-bottom: 10px;
   font-size: 40px;
 }
