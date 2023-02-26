@@ -1,0 +1,12 @@
+
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.test-title {
+  font-size: 40px;
+  font-weight: 600;
+}

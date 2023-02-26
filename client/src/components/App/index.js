@@ -4,7 +4,7 @@ import HomePage from "../Home";
 import Footer from "../layout/Footer";
 import Learning from "../layout/Learning";
 import TestPage from "../layout/TestPage";
-import LearnByTopic from "../layout/LearnByTopic";
+import TopicPage from "../layout/TopicPage";
 import AboutUs from "../layout/AboutUs";
 import Dictionary from "../layout/Dictionary";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -20,8 +20,8 @@ function App() {
       element: <Learning />,
     },
     {
-      path: "/learning/learn-by-topic",
-      element: <LearnByTopic />,
+      path: "/learning/:topic",
+      element: <TopicPage />,
     },
     {
       path: "/about-us",

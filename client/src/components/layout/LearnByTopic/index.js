@@ -1,13 +1,16 @@
 import React from 'react';
-import Slider from '../../ui/Slider/Slider';
-import './LearnByTopic.css';
+import { Link } from 'react-router-dom';
 
-const LearnByTopic = () => {
+const LearnByTopic = ({ topics }) => {
   return (
-    <div className='learn-topic'>
-      <span className='blue-text'>Choose your favorite!</span>
-      <div className='topic-sections'>
-        
+    <div className='list-container'>
+      <span className="list-title">Learning Topics</span>
+      <div className={topics.length > 5 ? 'double-list' : ''}>
+        {topics.map((topic) => (
+          <Link to={'/' + topic}>
+            <div className='list-item' key={topic}>{topic}</div>
+          </Link>
+        ))}
       </div>
     </div>
   )

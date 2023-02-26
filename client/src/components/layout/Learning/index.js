@@ -3,6 +3,7 @@ import List from '../../ui/List';
 import Slider from '../../ui/Slider/Slider';
 import './Learning.css';
 import Flashcard from '../../ui/Flashcard';
+import LearnByTopic from '../LearnByTopic';
 
 const Learning = (props) => {
   const imageUrl = [
@@ -14,7 +15,7 @@ const Learning = (props) => {
     "https://www.pngfind.com/pngs/m/495-4950739_pokemon-cartoon-png-pokemon-pikachu-png-transparent-png.png"
   ];
 
-  const lists = ['List 1', 'List 2', 'List 3', 'List 4', 'List 5'];
+  const lists = ['List 1', 'List 2', 'List 3', 'List 4', 'List 5', 'List 6'];
 
   // const  {topics} = props;
 
@@ -23,7 +24,7 @@ const Learning = (props) => {
 
       <div className='learning-section'>
         {/* <span className='blue-text'>Learning Topics</span> */}
-        <List title='Learning Topics' items={['Text 1', 'Text 2', 'Text 3', 'Text 4']} />
+        <LearnByTopic topics={['Text 1', 'Text 2', 'Text 3', 'Text 4', 'Text 5', 'Text 6']} />
       </div>
 
       <div className='learning-section flashcards'>

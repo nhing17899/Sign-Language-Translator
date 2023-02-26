@@ -11,21 +11,21 @@ const ImgToText = (props) => {
     };
 
     return (
-        <li className="imgToText">
+        <div className="imgToText">
             <div className="ques">
                 <div className="quesSentence">
                     Type the correct answer for the sign
                 </div>
-                <ul className="quesImgList">
-                    {question.map(ques => <li className="quesImgItem">
+                <div className="quesImgList">
+                    {question.map(ques => <div className="quesImgItem">
                         <img className="quesImg" src={ques} alt={ques} />
-                    </li>)}
-                </ul>
+                    </div>)}
+                </div>
                 <div className="quesAnswerText">
-                    <input type="text" value={answerInput} onChange={handleInputChange} />
+                    <input type="text" value={answerInput} onChange={handleInputChange} placeholder='Answer here'/>
                 </div>
             </div>
-        </li>
+        </div>
     );
 };
 
