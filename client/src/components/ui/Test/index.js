@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useState, useEffect } from "react";
-import ImgToText from "../QuesTest/index";
+import ImgToText, { TextToImg } from "../QuesTest/index";
 import "./Test.css";
 
 import axios from "axios";
@@ -12,11 +12,13 @@ const Test = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [isQuizzesFetched, setIsQuizzesFetched] = useState(false);
 
+  let category = 'daily conversation';
+
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.post("/api/v1/quiz/category", {
-          category: "family",
+          category: 'daily conversation',
         });
         setQuizzes(response.data.data);
         setIsQuizzesFetched(true);
@@ -33,8 +35,10 @@ const Test = () => {
   return (
     <div>
       <div>{titleTest}</div>
-      {quizzes.map(quiz => (
-        (quiz.quizType === 'image to text' && <ImgToText quiz={quiz} />)))}
+      {console.log(quizzes)}
+      {/* {quizzes.map(quiz => (quiz.quizType === 'image to text' ? <ImgToText quiz={quiz} /> : <TextToImg quiz={quiz} category={category} />) */}
+      {quizzes.map(quiz => (quiz.quizType === 'image to text' && <ImgToText quiz={quiz} category={category} />))}
+      
     </div>
   );
 };
