@@ -1,12 +1,12 @@
 import React from 'react';
-import { ImgToText } from '../../ui/Test';
+import Test from '../../ui/Test';
 import './TestPage.css';
 
 const Learning = (props) => {
   
   return (
     <div className='learning'>
-      <ImgToText />
+      <Test />
     </div>
   )
 }

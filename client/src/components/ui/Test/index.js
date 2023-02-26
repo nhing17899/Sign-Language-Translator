@@ -1,23 +1,37 @@
-import React from 'react';
-import './Test.css';
+import React from "react";
+import { useState, useEffect } from "react";
+import "./Test.css";
 
-export const ImgToText = (props) => {
-  const quesImgUrl = [
-    "/assets/images/bg-home.jpg",
-    "/assets/images/bg-home.jpg",
-    "/assets/images/bg-home.jpg",
-    "/assets/images/bg-home.jpg",
-    "/assets/images/bg-home.jpg",
-  ];
+import axios from 'axios';
 
-  const titleTest = 'Topic Test : '
 
-  return (
-    <div className='imgToText'>
+const Test = () => {
+    const titleTest = "Test : 1";
 
-        <span className='blue-text'>Learning Topics</span>
+    const [quizzes, setQuizzes] = useState([]);
 
-      
-    </div>
-  )
-}
+    useEffect(() => {
+        axios({
+          method: 'post',
+          url: '/api/v1/quiz/category',
+          category: "family"
+        })  
+        .then(function (res) {
+          // handle success
+          setQuizzes(res.data);
+          console.log(quizzes);
+        })
+        .catch(function (err) {
+          // handle error
+          console.log(err);
+        })
+    }, [quizzes]);
+
+    return (
+        <div>
+            <div>{titleTest}</div>
+        </div>
+    );
+};
+
+export default Test;

@@ -34,7 +34,7 @@ const Flashcard = ({ title, cards }) => {
           <div 
             className={'flashcard-text'}
             onClick={handleFlipCard}
-            style={{display: isFlip ? 'block' : 'none'}}
+            style={{display: isFlip ? 'flex' : 'none'}}
           >
             {cards[currentCardIndex].text}
           </div>
